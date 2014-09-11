@@ -1,0 +1,12 @@
+
+<% if @events.any? %>
+
+  <% @events.each do |event| %>
+    <%= link_to event.event_name, event %>
+  <% end %>
+
+<% else %>
+
+  <p>Add some events</p>
+
+<% end %>
