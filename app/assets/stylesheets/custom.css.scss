@@ -1,6 +1,18 @@
 @import 'bootstrap';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+ul li {
+  list-style-type: none;
+}
 
 .add-form {
+
+  padding: 5em 0 0 0;
+
   .field_with_errors {
     @extend .control-group;
     @extend .error;
@@ -32,3 +44,41 @@
   }
 }
 
+.navbar {
+  margin: 0;
+  padding: 0;
+}
+
+.jumbotron {
+  height: 30em;
+}
+
+.event-block {
+  background-color: #ccc;
+  border-radius: 2%;
+  width: 18em;
+  height: 22em;
+  float: left;
+  margin: 0 1em;
+}
+
+.upper-part {
+  height: 50%;
+}
+
+.bottom-part {
+  height: 50%;
+  background-color: #f1f1f1;
+  margin: 0;
+  padding: 1em 2em;
+}
+
+a.event-link {
+  color: #555;
+  text-decoration: none;
+}
+
+a.event-link:hover {
+  color: #555;
+  text-decoration: none; 
+}

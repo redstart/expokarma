@@ -1,10 +1,30 @@
+<div class="jumbotron">
+
+</div>
+
+
+
 
 <% if @events.any? %>
 
   <% @events.each do |event| %>
-    <%= link_to event.event_name, event %>
+    <%= link_to event, class: 'event-link' do %>
+      <div class="event-block">
+        <div class="upper-part">
+          <!--paste image here-->
+        </div>
+        <div class="bottom-part">
+          <h4><%= event.event_name %></h4>
+            <% if (event.from_date.year == event.until_date.year) and (event.from_date.month == event.until_date.month) %>
+            <p><%= "#{event.from_date.day} - #{event.until_date.day} #{event.until_date.strftime '%b %Y'}" %></p>
+          <% else %>
+            <p><%= "#{event.from_date.strftime '%d %b'} - #{event.until_date.strftime '%d %b'}, #{event.until_date.strftime '%Y'}" %></p>
+          <% end %>
+          <p><%= event.city %>, <%= event.country %></p>
+        </div>
+      </div>  
+    <% end %>
   <% end %>
-
 <% else %>
 
   <p>Add some events</p>
