@@ -1,4 +1,6 @@
 
+<%= image_tag @event.event_image_url(:big_thumb).to_s %>
+
 <%= @event.event_name %>
 
 <%= @event.from_date %>
@@ -8,3 +10,5 @@
 <%= link_to 'Back', events_path %>
 
 <%= link_to 'Edit', edit_event_path %>
+
+<%= link_to 'Delete', event_path, method: :delete, confirm: "Are you sure?" %>

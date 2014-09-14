@@ -2,21 +2,19 @@
 
 </div>
 
-
-
-
+<div class="container">
 <% if @events.any? %>
 
   <% @events.each do |event| %>
     <%= link_to event, class: 'event-link' do %>
       <div class="event-block">
         <div class="upper-part">
-          <!--paste image here-->
+          <%= image_tag event.event_image_url(:thumb).to_s %>
         </div>
         <div class="bottom-part">
           <h4><%= event.event_name %></h4>
             <% if (event.from_date.year == event.until_date.year) and (event.from_date.month == event.until_date.month) %>
-            <p><%= "#{event.from_date.day} - #{event.until_date.day} #{event.until_date.strftime '%b %Y'}" %></p>
+            <p><%= "#{event.from_date.day} - #{event.until_date.day} #{event.until_date.strftime '%b, %Y'}" %></p>
           <% else %>
             <p><%= "#{event.from_date.strftime '%d %b'} - #{event.until_date.strftime '%d %b'}, #{event.until_date.strftime '%Y'}" %></p>
           <% end %>
@@ -30,3 +28,5 @@
   <p>Add some events</p>
 
 <% end %>
+
+</div>

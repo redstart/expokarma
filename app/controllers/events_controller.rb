@@ -35,6 +35,8 @@ def update
 end
 
 def destroy
+  @event = Event.find(params[:id]).destroy
+  redirect_to :index
 end
 
   private
@@ -43,14 +45,9 @@ end
       params.require(:event).permit(:event_name, :event_type, 
                                     :from_date, :until_date, 
                                     :event_description, :country, :city, 
-                                    :venue_name, :venue_address, :event_website)
+                                    :venue_name, :venue_address, :event_website, 
+                                    :event_image, :remove_event_image)
     end
 
-    def event_dates
-      if (@event.from_date.year == @event.until_date.year) and (@event.from_date.month == @event.until_date.month)
-        "#{@event.from_date.day} - #{@event.until_date.day} #{@event.until_date.strftime '%b %Y'}"
-      else
-        "#{@event.from_date.strftime '%d %b, %Y'} - #{@event.until_date.strftime '%d %b, %Y'}"
-      end
-    end 
+    
 end

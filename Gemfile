@@ -55,3 +55,8 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
+gem 'rmagick'
+gem 'carrierwave'
+gem 'populator'
+gem 'faker'
